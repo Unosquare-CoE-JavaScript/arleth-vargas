@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Component, useState } from 'react'
 import styles from './index.css'
 
 //we are using states and setting the initial state
@@ -8,13 +8,38 @@ const initialState = {
     isClicked: false
 }
 
-const MediumClap = () => {
+
+/*
+HOC High Order Component
+*/
+
+const withClapAnimation = Wrappedcomponent => {
+    // this is a class component
+    class WithClapAnimation extends Component {
+
+        // function to handle animation and logic
+        animate =() => {
+            console.log('%c Animate', 'background:yellow;color:black')
+        }
+
+        render () {
+            return <Wrappedcomponent { ... this.props } animate={this.animate}/>
+        }
+    }
+    return WithClapAnimation 
+
+}
+const MediumClap = ({animate}) => {
     
     const MAXIMUM_USER_CLAP = 50
     const [clapState, setClapState] = useState(initialState)
     const { count, countTotal, isClicked } = clapState
 
     const handleClapClick = () => {
+
+        // at this point we are logging the "Animated" log in the console. It is with yellow background
+        animate()
+
         //we will set state and increase the counter
         // setClapState({
         //     count: count + 1,
@@ -70,4 +95,16 @@ const CountTotal = ({ countTotal }) => {
     )
 }
 
-export default MediumClap
+// it was removed since we are using animations
+// export default MediumClap
+
+/*
+USAGE
+*/
+
+const Usage = () => {
+    const AnimatedMediumClap = withClapAnimation(MediumClap)
+    return <AnimatedMediumClap />
+}
+
+export default Usage;
