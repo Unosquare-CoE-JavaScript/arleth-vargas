@@ -13,10 +13,6 @@ HOC High Order Component
 const withClapAnimation = Wrappedcomponent => {
     // this is a class component
     class WithClapAnimation extends Component {
-        // function to handle animation and logic
-        // animate =() => {
-        //     console.log('%c Animate', 'background:yellow;color:black')
-        // }
         animationTimeline = new mojs.Timeline()
 
         state = {
@@ -24,22 +20,87 @@ const withClapAnimation = Wrappedcomponent => {
         }
 
         // lifecicle as soon as the component mounts
-        componentDidMount(){
-            const scaleButton= new mojs.Html({
+        componentDidMount() {
+            const tlDuration = 300
+            const scaleButton = new mojs.Html({
                 el: '#clap',
-                duration: 300,
+                duration: tlDuration,
                 // initial (key), last (value)
                 scale: { 1.3: 1 },
                 easing: mojs.easing.ease.out
             })
+
+            const triangleBurst = new mojs.Burst({
+                parent: '#clap',
+                radius: {50:95},
+                count: 5,
+                // angle of rotation from the center
+                angle: 30,
+                children: {
+                    shape: 'polygon',
+                    radius: {6: 0},
+                    stroke: 'rgba(211,54,0,0.5)',
+                    strokeWidth: 2,
+                    //this defines how each one will rotate
+                    angle: 210,
+                    delay: 30,
+                    speed: 0.2,
+                    easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+                    duration: tlDuration
+                }
+            })
+
+            const circleBurst = new mojs.Burst({
+                parent: '#clap',
+                radius: {50:75},
+                angle: 25,
+                duration: tlDuration,
+                children: {
+                    shape: 'circle',
+                    fill: 'rgba(149, 165, 166, 0.5)',
+                    delay: 30,
+                    speed: 0.2,
+                    radius: {3:0},
+                    easing: mojs.easing.bezier(0.1, 1, 0.3, 1)
+                }
+            })
+
+            const countAnimation = new mojs.Html({
+                el:'#clapCount',
+                opacity: {0:1},
+                y:{0:-30},
+                duration: tlDuration
+            }).then({
+                // we make this stays for a bit then move it to the top and dissapear
+                opacity: {1:0},
+                y:-80,
+                delay: tlDuration/2
+            })
+
+            // the animation makes it appear a few ms after we click the button
+            const countTotalAnimation = new mojs.Html({
+                el: '#clapCountTotal',
+                opacity: { 0: 1 },
+                delay: (3 * tlDuration) / 2,
+                duration: tlDuration,
+                //makes the animation appear from the bottom
+                y: { 0: -3 }
+            })
+
             const clap = document.getElementById('clap')
             // by default this is the start scale
-            clap.style.transform= 'scale(1,1)'
-            
-            
-            const newAnimationTimeline = this.animationTimeline.add([scaleButton])
+            clap.style.transform = 'scale(1,1)'
+
+            // here we are attaching all the animation elements 
+            const newAnimationTimeline = this.animationTimeline.add([
+                scaleButton, 
+                countTotalAnimation, 
+                countAnimation,
+                triangleBurst,
+                circleBurst
+            ])
             //changes the scale to its initial position
-            this.setState({animationTimeline: newAnimationTimeline})
+            this.setState({ animationTimeline: newAnimationTimeline })
         }
 
         render() {
@@ -61,13 +122,6 @@ const MediumClap = ({ animationTimeline }) => {
     const handleClapClick = () => {
 
         // at this point we are logging the "Animated" log in the console. It is with yellow background
-        //animate()
-
-        //we will set state and increase the counter
-        // setClapState({
-        //     count: count + 1,
-        //     countTotal: countTotal +1
-        // })
         setClapState(prevState => ({
             isClicked: true,
             count: Math.min(count + 1, MAXIMUM_USER_CLAP),
@@ -84,7 +138,6 @@ const MediumClap = ({ animationTimeline }) => {
 }
 
 // SUBCOMPONENTS
-
 
 const ClapIcon = ({ isClicked }) => {
     return (
@@ -117,9 +170,6 @@ const CountTotal = ({ countTotal }) => {
         </span>
     )
 }
-
-// it was removed since we are using animations
-// export default MediumClap
 
 /*
 USAGE
