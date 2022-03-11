@@ -42,3 +42,7 @@ Every component is isolated, self contained but still can be part of another com
 Why should we use them? Because we can have its own props for each com ponents (individual props), we expose an understable UI to API (easy to iunderstand), prevent from props overload in case there are some props that are not necessary in the other components.   
 
 **Context** is used to shapre data that can be considered "global" for a tree of React Components.
+
+## Reusable styles
+
+As in the title if we want to apply same style in components (e.g background color) then we can use styles in className or inline styles.  
