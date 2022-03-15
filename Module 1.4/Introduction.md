@@ -67,3 +67,8 @@ The props we pass inline can overwrite the object we created before. The prop ge
 > Function in sequence wellknown as Currying in Javascript arrow function sequence
 
 https://medium.com/@harouny/currying-in-javascript-arrow-function-sequence-2a510441215a
+
+## State Initializers
+
+We have **initialState** that is the default state when it first starts, then the **update state** that is the one in charge to run a function in case something changes, and finally we have the **reset state** in charge to set the state to its iniitial state. 
+Side effects are used to make changes after reset is applied.
