@@ -59,3 +59,11 @@ In case we have smaller modules and we want to break them and use custom hooks t
 
 this is used to give the user more flexibility, it is used to split a little biut the component and for example change the components we want to show, replace them, etc. and the app won't break. In the example I have replaced the icon by an  emoji. 
 An advantage is that the user can render another component using the same props that other components. It makes easiert to replace props in many components. 
+
+## The props getter pattern
+
+The props we pass inline can overwrite the object we created before. The prop getter  is a function and the props collection is an object. 
+
+> Function in sequence wellknown as Currying in Javascript arrow function sequence
+
+https://medium.com/@harouny/currying-in-javascript-arrow-function-sequence-2a510441215a
