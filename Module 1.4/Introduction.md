@@ -46,3 +46,7 @@ Why should we use them? Because we can have its own props for each com ponents (
 ## Reusable styles
 
 As in the title if we want to apply same style in components (e.g background color) then we can use styles in className or inline styles.  
+
+## The control props pattern
+
+So we have some form elements but it is recomendable to use components instead. Esample, we have a coontrolled input element, we can handle the state acvcording the value we get there or throw an event that can change the state and ask for another value. In oruy example we want to use callback in order to have controlled components in the medium  clap example. The state value is in **value** and the state updated is in **onClap** in this case we want to have two entities but share the total counf. 
