@@ -72,3 +72,11 @@ https://medium.com/@harouny/currying-in-javascript-arrow-function-sequence-2a510
 
 We have **initialState** that is the default state when it first starts, then the **update state** that is the one in charge to run a function in case something changes, and finally we have the **reset state** in charge to set the state to its iniitial state. 
 Side effects are used to make changes after reset is applied.
+
+## The state reducer pattern
+
+> A reducer is a function but has an special array that takes the state and action and return a new stated based on that action. 
+
+So, we can have an internal state that can be managed by the value that we are passing in the components and return a new state. 
+Reducer receives state and action and based of the type we can return a different state and change the behavior. 
+Dispatch, ehrn we cal;l iut we pass an object and it rpresents an action, the mos important in thi case is the **Type**, it gors to the reducer and then we use **case** to define the next action. 
