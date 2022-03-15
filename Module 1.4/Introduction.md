@@ -49,4 +49,8 @@ As in the title if we want to apply same style in components (e.g background col
 
 ## The control props pattern
 
-So we have some form elements but it is recomendable to use components instead. Esample, we have a coontrolled input element, we can handle the state acvcording the value we get there or throw an event that can change the state and ask for another value. In oruy example we want to use callback in order to have controlled components in the medium  clap example. The state value is in **value** and the state updated is in **onClap** in this case we want to have two entities but share the total counf. 
+So we have some form elements but it is recomendable to use components instead. Esample, we have a coontrolled input element, we can handle the state acvcording the value we get there or throw an event that can change the state and ask for another value. In oruy example we want to use callback in order to have controlled components in the medium  clap example. The state value is in **value** and the state updated is in **onClap** in this case we want to have two entities but share the total count.
+
+## Custom hooks : deeper look 
+
+In case we have smaller modules and we want to break them and use custom hooks then we have it to help us with the re-usability. 
