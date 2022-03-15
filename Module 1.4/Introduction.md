@@ -54,3 +54,8 @@ So we have some form elements but it is recomendable to use components instead. 
 ## Custom hooks : deeper look 
 
 In case we have smaller modules and we want to break them and use custom hooks then we have it to help us with the re-usability. 
+
+## The props collection pattern
+
+this is used to give the user more flexibility, it is used to split a little biut the component and for example change the components we want to show, replace them, etc. and the app won't break. In the example I have replaced the icon by an  emoji. 
+An advantage is that the user can render another component using the same props that other components. It makes easiert to replace props in many components. 
