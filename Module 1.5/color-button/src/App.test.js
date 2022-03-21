@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
-import { replaceCamelWithSpaces } from './App';
+import {replaceCamelWithSpaces} from './App';
 
 // These colors were updated for third quiz
 const colorRed = 'MediumVioletRed'

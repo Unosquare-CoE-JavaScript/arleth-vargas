@@ -54,3 +54,14 @@ The example an the quizzes ate attached in the folder color button
 ## Unit testing functions
 
 This is remomended in order to separate functions from components and unit tests to test complex logic. 
+
+## ESlint
+ linter. analyses static text and marks syntax that breaks rules
+ static. analyze code as writte, not what happens when code is run. 
+
+ In VSCode install ehr ESlint extension and in thje .vsconfig add:
+ ```
+  "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+ ```
