@@ -49,3 +49,8 @@ Documentation of jest (custom matchers and style examples) :
 
 ## Color button example
 **fireEvent** helps up to interact with elements and launch an event
+The example an the quizzes ate attached in the folder color button
+
+## Unit testing functions
+
+This is remomended in order to separate functions from components and unit tests to test complex logic. 
