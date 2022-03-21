@@ -65,3 +65,7 @@ This is remomended in order to separate functions from components and unit tests
         "source.fixAll.eslint": true
     }
  ```
+
+ ## Sundaes on Demand
+
+We are going to create a project that connects to the ("server")[https://github.com/bonnie/udemy-TESTING-LIBRARY/tree/main/sundae-server] to get all the siundaes flavors available.  Tests are going to simulare the response from the server using MOCKS.
