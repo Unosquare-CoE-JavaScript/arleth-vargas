@@ -82,8 +82,21 @@ https://mswjs.io/
 Some errors found in the examples: 
 
 ```JAVASCRIPT
-// Before
+// WRONG
 expect(scoopImages).toHaveLenght(2)
-//After
+// RIGHT
 expect(scoopImages.length).toBe(2)
 ```
+
+## Handle errors
+
+Axios has a catch option in order to catch errors and there we can code alerts in case server is returning erros and the page wont break. 
+https://react-bootstrap.github.io/components/alerts/
+
+## Jest Dubugging tools
+
+use W then P to run only a file
+then .only to run only a set of tests in that file
+
+Since we want to get all alerts and not only one, we can use **waitFor**: 
+https://testing-library.com/docs/dom-testing-library/api-async/#waitfor
