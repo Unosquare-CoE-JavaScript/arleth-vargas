@@ -31,6 +31,8 @@ export default function Options({ optionType }) {
   const optionItems = items.map((optionItem) => {
     //console.log(optionItem.name)
     return (
+
+
       <ItemComponent
         key={optionItem.name}
         name={optionItem.name}
@@ -39,13 +41,14 @@ export default function Options({ optionType }) {
           updateItemCount(itemName, newItemCount, optionType)
         }
       />
+
     );
   });
 
   return (
     <>
       <h2>{title}</h2>
-      <p>{pricePerItem[optionType]} each</p>
+      <p>{pricePerItem[optionType]}$ each</p>
       <p>
         {title} total: {orderDetails.totals[optionType]}
       </p>
