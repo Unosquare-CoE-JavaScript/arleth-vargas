@@ -73,3 +73,17 @@ We are going to create a project that connects to the ("server")[https://github.
 This is a helpful cheatsheet https://testing-library.com/docs/react-testing-library/cheatsheet/
 
 Component overlays https://react-bootstrap.github.io/components/overlays/#popovers
+
+## Mock Srevice Worker
+We are going to use it in order to mock the data returned from the server
+
+https://mswjs.io/
+
+Some errors found in the examples: 
+
+```JAVASCRIPT
+// Before
+expect(scoopImages).toHaveLenght(2)
+//After
+expect(scoopImages.length).toBe(2)
+```

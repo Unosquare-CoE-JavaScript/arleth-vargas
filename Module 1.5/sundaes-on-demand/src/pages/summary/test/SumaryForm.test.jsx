@@ -24,14 +24,14 @@ import {
     });
     const confirmButton = screen.getByRole('button', { name: /confirm order/i });
   
-    // clicj and enable
+    // click and enable
     userEvent.click(checkbox);
     expect(confirmButton).toBeEnabled();
     // click again nand disable
     userEvent.click(checkbox);
     expect(confirmButton).toBeDisabled();
   });
-  // TYEST IF THE ELEMENT HAS DISSAPEARED FROM THE PAGE
+  // TEST IF THE ELEMENT HAS DISSAPEARED FROM THE PAGE
   test('popover responds to hover', async () => {
     render(<SummaryForm />);
   
