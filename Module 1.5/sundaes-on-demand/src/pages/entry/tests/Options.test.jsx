@@ -14,3 +14,14 @@ test('displays image for each scoop option from the server', async ()=>{
     const allText = scoopImages.map((element) => element.alt)
     expect(allText).toEqual(['Chocolate scoop', 'Vanilla scoop'])
 })
+
+// SECOND QUIZ WE ARE TESTING TOPPINGS
+
+test('displays image for each topping option from the server', async ()=>{
+    render (<Options optionType='toppings' />)
+    const scoopImages = await screen.findAllByRole('img', { name: /topping$/i })
+    expect(scoopImages.length).toBe(3)
+
+    const allText = scoopImages.map((element) => element.alt)
+    expect(allText).toEqual(['Cherries topping', 'M&Ms topping', 'Hot fudge topping'])
+})
