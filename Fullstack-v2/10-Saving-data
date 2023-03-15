@@ -1,0 +1,34 @@
+## Files and Databases overview
+
+We mostrly write save and get data from databases. 
+Filws are not portable, this can be stored in one serve  and it NOT SCALABLE. 
+
+Databases is readable and writable, when we talk of a lot of data we need this ti be organized. 
+
+## Relational DB
+
+- sql
+- TYablws
+- - Relarted data
+- - Strict structure
+
+This describes how entities are relarted to each otherit has its own language and when yoy have large ammounts of sdata you need this. 
+
+We need a schema which is a strict rule, and we have to make sure that eg one field is only for ione type, eg. boolean,
+
+## NON R elational DB
+
+- NoSql
+- Data agnostic
+- loos structure
+
+And when we think of pure document storage w can use this one.  They are data agnostic they fdont care about the data you are entering there. 
+
+## Redis
+
+this stores a key and a  value it is nonrelational db and we can also use node redis.
+
+## Web Sockets
+
+it is two way ot is a persistent bidirectional connection nebetween client and server. It is used in chat appliction in case we want to keep the connection open. 
+
